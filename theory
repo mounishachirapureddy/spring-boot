@@ -1,0 +1,4 @@
+light weight framework
+creating interfaces(as it creates an abstraction layer ) and then subclasses is better than creating classes directly--for programming
+POJO---plain old java classes---it should inherit from any class and the variables cdeclared inside the class should have setter and getter methods
+loose coupling---low dependency
