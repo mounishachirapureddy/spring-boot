@@ -2,3 +2,67 @@ light weight framework
 creating interfaces(as it creates an abstraction layer ) and then subclasses is better than creating classes directly--for programming
 POJO---plain old java classes---it should inherit from any class and the variables cdeclared inside the class should have setter and getter methods
 loose coupling---low dependency
+--depency injection---- to do loosecoupling--by two methods one through constructor and through methods(set method--setter injection)
+===================
+class mobile
+{
+mobile()
+{
+airtelsim ar=new airtelsim()
+}
+}
+++++++++++++++++++++++++++++++
+airtelsim()
+{}
+jiosim()
+{}
+bsnlsim()
+{}
+the above example is tightly coupled because only airtelsim is called
+to make it loosely coupled we use dependency injection where we create interface name sim so that we can call objects of either airtel im .jiosim or bsnlsim
+interface sim 
+{}
+class airtelsim implements sim
+{}
+class jiosim implements sim
+{}
+class bsnlsim implements sim
+{}
+
+1st method--using constrtuctor here,
+class mobile
+{
+sim ar=null;
+mobile( sim s)
+{
+ar=s
+}
+}
+outside we call with mobile s1=new mobile( new airtelsim )
+
+
+2nd method--using method here,
+class mobile
+{
+sim ar=null;
+public void setsim( sim s)
+{
+ar=s
+}
+}
+outside we call with 
+        mobile s1=new mobile() 
+        s1.setsim(new airtelsim())
+
+----------------------------------------------
+////class mobile
+{
+mobile()
+{
+sim ar=new airtelsim()// we can create objects using interface with its subclass(airtelsim)
+}
+}////// we can write like this
+------------------------------------------------------------------------------------
+================================================================================
+inversion of control
+spring container
